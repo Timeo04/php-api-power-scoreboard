@@ -37,12 +37,12 @@ if($ok){
     if(isset($date)){
         $statement = $pdo->prepare("INSERT INTO scoreboard (userid,score,name,date) VALUES (".$userid.",".$score.",".$name.",".$date.");");
     }else{
-        $statement = $pdo->prepare("SELECT * FROM scoreboard ORDER BY score DESC;");
+        //$statement = $pdo->prepare("SELECT * FROM scoreboard ORDER BY score DESC;");
         //$statement = $pdo->prepare("INSERT INTO scoreboard (userid,score,name) VALUES (".$userid.",".$score.",".$name.");");
         //$statement->execute();
-        //echo json_encode(["ok" => true]);
+        echo json_encode(["ok" => "INSERT INTO scoreboard (userid,score,name) VALUES (".$userid.",".$score.",".$name.");"]);
     }
-    $sok = $statement->execute();
-    echo json_encode(["ok" => $sok]);
+    //$sok = $statement->execute();
+    //echo json_encode(["ok" => $sok]);
     //echo json_encode(["ok" => true]);
 }
