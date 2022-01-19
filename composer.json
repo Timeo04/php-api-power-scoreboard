@@ -1,7 +1,7 @@
 {
   "require" : {
     "ext-pdo": "*",
-    "ext-pdo_mysql": "*",
+    "ext-pdo_mysql": "*"
   },
   "require-dev": {
     "heroku/heroku-buildpack-php": "*"
