@@ -16,7 +16,8 @@ $pdo = new PDO("pgsql:" . sprintf(
 
 //$pdo = new PDO('mysql:host=localhost;dbname=test', 'root', '');
 if(isset($num) and is_numberic($num)  and $num > 0){
-    $statement = $pdo->prepare("SELECT TOP $num * FROM scoreboard ORDER BY score;");
+    $statement = $pdo->prepare("SELECT * FROM scoreboard ORDER BY score;");
+    //$statement = $pdo->prepare("SELECT TOP $num * FROM scoreboard ORDER BY score;");
 }else{
     $statement = $pdo->prepare("SELECT * FROM scoreboard ORDER BY score;");
 }
