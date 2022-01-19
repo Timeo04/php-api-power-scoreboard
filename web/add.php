@@ -18,4 +18,9 @@ $data = json_decode(file_get_contents('php://input'), true);
 $text = trim($data['text'] ?? '');
 
 echo $data;
+echo ' - ';
 echo $text;
+echo ' - ';
+echo $data['score'];
+echo ' - ';
+echo $data['date'];
