@@ -6,6 +6,7 @@
  <body>
    <h1>Scoreboard</h1>
    <a href="https://openprocessing.org/sketch/1447262">zum Game</a>
+  <br>
  <?php 
   //echo '<p>Hallo Welt</p>'; 
   
