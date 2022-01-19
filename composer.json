@@ -1,6 +1,5 @@
 {
   "require" : {
-    "php": ">=5.3.6",
     "ext-pdo": "*",
     "ext-pdo_mysql": "*",
     "silex/silex": "^2.0.4",
