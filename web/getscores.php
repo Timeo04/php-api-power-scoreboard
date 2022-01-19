@@ -1,6 +1,6 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
-if(isset($_GET['num']){
+if(isset($_GET['num'])){
     $num = (int)$_GET['num'];
 }
 $db = parse_url(getenv("DATABASE_URL"));
