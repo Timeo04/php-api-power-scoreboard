@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: application/json; charset=utf-8');
 $db = parse_url(getenv("DATABASE_URL"));
 
 $pdo = new PDO("pgsql:" . sprintf(
