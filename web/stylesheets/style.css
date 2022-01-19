@@ -22,3 +22,8 @@ h1 {
   font-size:30pt;  /* Größe 28pt   */
   font-family:arial, sans-serif; /* Schriftart */
 }
+
+table{
+  margin-left: auto;
+  margin-right: auto;
+}
