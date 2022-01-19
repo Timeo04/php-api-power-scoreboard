@@ -1,6 +1,7 @@
 <html>
  <head>
   <title>POWERS - Scoreboard</title>
+  <link rel="stylesheet" href="stylesheets/style.css">
  </head>
  <body>
    <h1>Scoreboard</h1>
