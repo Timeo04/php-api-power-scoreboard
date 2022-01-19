@@ -6,7 +6,7 @@
    <h1>Scoreboard</h1>
    <a href="https://openprocessing.org/sketch/1447262">zum Game</a>
  <?php 
-  echo '<p>Hallo Welt</p>'; 
+  //echo '<p>Hallo Welt</p>'; 
   
   $db = parse_url(getenv("DATABASE_URL"));
   $pdo = new PDO("pgsql:" . sprintf(
@@ -18,11 +18,22 @@
       ltrim($db["path"], "/")
   ));
   
+  
+  echo '<table border="1">';
+  echo "<tr>";
+  echo '<th>Score:</th><th>Name:</th><th>Datum:</th>';
+  echo "</tr>";
   $sql = "SELECT score, name, date FROM scoreboard ORDER BY score DESC";
   foreach ($pdo->query($sql) as $row) {
-   echo $row['score']." ".$row['name']." ".$row['date']."  "."<br />";
+   echo "<tr>";
+   echo "<td>". $zeile['score'] . "</td>";
+   echo "<td>". $zeile['name'] . "</td>";
+   echo "<td>". $zeile['date'] . "</td>";
+   echo "</tr>";
+   //echo $row['score']." ".$row['name']." ".$row['date']."  "."<br />";
    //echo "E-Mail: ".$row['email']."<br /><br />";
   }
+  echo "</table>";
  ?>
  </body>
 </html>
