@@ -39,6 +39,6 @@ if($ok){
     }else{
         $statement = $pdo->prepare("INSERT INTO scoreboard (userid,score,name) VALUES (".$userid.",".$score.",".$name.");");
     }
-    $SQLok = $statement->execute();
-    echo json_encode(["ok" => $SQLok]);
+    $sok = $statement->execute();
+    echo json_encode(["ok" => $sok]);
 }
