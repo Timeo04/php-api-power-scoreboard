@@ -20,15 +20,13 @@
   
   
   echo '<table border="1">';
-  echo "<tr>";
-  echo '<th>Score:</th><th>Name:</th><th>Datum:</th>';
-  echo "</tr>";
+  echo '<tr><th>Score:</th><th>Name:</th><th>Datum:</th></tr>';
   $sql = "SELECT score, name, date FROM scoreboard ORDER BY score DESC";
   foreach ($pdo->query($sql) as $row) {
    echo "<tr>";
-   echo "<td>". $zeile['score'] . "</td>";
-   echo "<td>". $zeile['name'] . "</td>";
-   echo "<td>". $zeile['date'] . "</td>";
+   echo "<td>". $row['score'] . "</td>";
+   echo "<td>". $row['name'] . "</td>";
+   echo "<td>". $row['date'] . "</td>";
    echo "</tr>";
    //echo $row['score']." ".$row['name']." ".$row['date']."  "."<br />";
    //echo "E-Mail: ".$row['email']."<br /><br />";
