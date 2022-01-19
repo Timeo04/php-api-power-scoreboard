@@ -1,5 +1,5 @@
 <?php
-//header('Content-Type: application/json; charset=utf-8');
+header('Content-Type: application/json; charset=utf-8');
 $db = parse_url(getenv("DATABASE_URL"));
 $ok = true;
 
@@ -34,5 +34,11 @@ if(strlen($name)<1){
 }
 
 if($ok){
-    echo json_encode(["ok" => true]);
+    if(isset($date)){
+        $statement = $pdo->prepare("INSERT INTO scoreboard (userid,score,name,date) VALUES (".$userid.",".$score.",".$name.",".$date.");");
+    }else{
+        $statement = $pdo->prepare("INSERT INTO scoreboard (userid,score,name) VALUES (".$userid.",".$score.",".$name.");");
+    }
+    $SQLok = $statement->execute();
+    echo json_encode(["ok" => $SQLok]);
 }
