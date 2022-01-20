@@ -13,6 +13,7 @@
   <form method="post" id="form1"></form>
    <?php
   
+
     if(isset($_POST['delete'])){
      deleteColumn($_POST['delete']);
      //echo $_POST['delete'];
@@ -28,7 +29,11 @@
      //echo "<p>Saave</p>";
     }*/
   
-    showTable();
+    if(isset($_POST['modify'])){
+     showModifyTable($_POST['modify']);
+    }else{
+     showTable();
+    }
   
     function showTable(){
      $db = parse_url(getenv("DATABASE_URL"));
@@ -42,7 +47,7 @@
      ));
      
      echo '<table border="1" width="800" style="margin-left:auto;margin-right:auto">';
-     echo '<tr><th>ScoreID:</th><th>UserID:</th><th>Score:</th><th>Name:</th><th>Datum:</th><th>delete</th></tr>';
+     echo '<tr><th>ScoreID:</th><th>UserID:</th><th>Score:</th><th>Name:</th><th>Datum:</th><th>löschen</th><th>bearbeiten</th></tr>';
      $sql = "SELECT * FROM scoreboard ORDER BY scoreid DESC";
      foreach ($pdo->query($sql) as $row) {
       echo "<tr>";
@@ -52,14 +57,15 @@
       echo "<td>". $row['name'] . "</td>";
       echo "<td>". $row['date'] . "</td>";
       echo '<td><button type="submit" form="form1" name="delete" value="'.$row['scoreid']. '">Löschen</button></td>';
+      echo '<td><button type="submit" form="form1" name="modify" value="'.$row['scoreid']. '">Bearbeiten</button></td>';
       //echo '<td><form method="post"><input type="submit" name="button1" class="button" value="'.$row['scoreid']. '"</td>';
       echo "</tr>";
      }
      echo "</table>";  
     }
   
-    function showModifyTable(){
-     echo "<p>Hello World</p>";
+    function showModifyTable($id){
+     echo "<p>Hello World: ".$id."</p>";
     }
   
     function deleteColumn($id){
