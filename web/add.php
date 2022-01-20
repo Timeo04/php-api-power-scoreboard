@@ -21,7 +21,7 @@ $data = json_decode(file_get_contents('php://input'), true);
 $name = $data['name'];
 $score = $data['score'];
 $userid = $data['userid'];
-$date = $data['date'];
+$datevar = $data['date'];
 if(strlen($name)<1){
     echo json_encode(["ok" => false]);
     $ok = false;
@@ -32,10 +32,13 @@ if(strlen($name)<1){
    echo json_encode(["ok" => false]);
     $ok = false;
 }
+if(!isset($datevar)){
+    $datevar = date(date_format('Y-m-d H:i:s'));
+}
 
 if($ok){
-    if(isset($date)){
-        $statement = $pdo->prepare("INSERT INTO scoreboard (userid,score,name,date) VALUES (".$userid.",".$score.",'".$name."','".$date."');");
+    if(isset($datevar)){
+        $statement = $pdo->prepare("INSERT INTO scoreboard (userid,score,name,date) VALUES (".$userid.",".$score.",'".$name."','".$datevar."');");
     }else{
         //$statement = $pdo->prepare("SELECT * FROM scoreboard ORDER BY score DESC;");
         $statement = $pdo->prepare("INSERT INTO scoreboard (userid,score,name) VALUES (".$userid.",".$score.",'".$name."');");
