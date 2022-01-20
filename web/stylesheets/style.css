@@ -23,6 +23,14 @@ h1 {
   font-family:Arial, Helvetica, sans-serif; /* Schriftart */
 }
 
+a {
+  color: #fcbf5b;
+}
+
+a:hover {
+  color: #fcbf5b;
+}
+
 table, th, tr, td{
   border-collapse: collapse;
 }
