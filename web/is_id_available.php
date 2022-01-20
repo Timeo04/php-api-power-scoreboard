@@ -4,7 +4,7 @@ header('Content-Type: application/json; charset=utf-8');
 $ok = true;
 if(isset($_GET['id']) and is_numeric($_GET['id'])){
     $id = $_GET['id'];
-    echo json_encode(["ok" => $id]);
+    //echo json_encode(["ok" => $id]);
 }else{
   $ok = false;
   echo json_encode(["ok" => false]);
@@ -21,7 +21,7 @@ $pdo = new PDO("pgsql:" . sprintf(
 ));
 
 if($ok){
-   $statement = $pdo->prepare("SELECT COUNT(*) FROM scoreboard WHERE userid=".$id.");");
+   $statement = $pdo->prepare("SELECT COUNT(*) FROM scoreboard WHERE userid=".$id.";");
    $statement->execute();
    $data = $statement->fetchAll(PDO::FETCH_ASSOC);
    echo json_encode($data);
