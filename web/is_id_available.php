@@ -4,6 +4,7 @@ header('Content-Type: application/json; charset=utf-8');
 $ok = true;
 if(isset($_GET['id']) and is_numeric($_GET['id'])){
     $id = $_GET['id'];
+    echo json_encode(["ok" => $id]);
 }else{
   $ok = false;
   echo json_encode(["ok" => false]);
