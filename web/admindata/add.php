@@ -25,10 +25,10 @@
     $score = $_POST['score'];
     $userid = $_POST['userid'];
     $datevar = $_POST['date'];
-    echo "<p>".$name."</p><br>";
-    echo "<p>".$score."</p><br>";
-    echo "<p>".$userid."</p><br>";
-    echo "<p>".$datevar."</p><br>";
+    //echo "<p>".$name."</p><br>";
+    //echo "<p>".$score."</p><br>";
+    //echo "<p>".$userid."</p><br>";
+    //echo "<p>".$datevar."</p><br>";
     if(strlen($name)<1){
      $ok = false;
     }elseif(!is_numeric($score)){
@@ -49,6 +49,7 @@
     }
    ?>
   <br>
-  <input type="button" value="Zurück" onClick="javascript:history.back()">
+  <button onclick="window.location.href = '../admin';">Zurück</button>
+  <!--<input type="button" value="Zurück" onClick="javascript:history.back()">-->
  </body>
 </html>
