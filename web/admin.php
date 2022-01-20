@@ -187,6 +187,9 @@
     }*/
   
    ?>
+  <br>
+  <hr>
+  <br>
   <h2>Score eintragen</h2>
   <br>
   <form action="/admindata/add" method="post" id="form2">
