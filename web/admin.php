@@ -92,10 +92,10 @@
       }else{
        echo "<tr>";
        echo "<td>". $row['scoreid']. "</td>";
-       echo '<td><input type="number" id="userid" form="form1" name="userid" min="0" value="'.$row['userid']'" required></td>';
-       echo '<td><input type="number" id="score" form="form1" name="score" min="0" value="'.$row['score']'" required></td>';
-       echo '<td><input type="text" id="name" form="form1" name="name" value="'.$row['name']'" required></td>';
-       echo '<td><input type="text" id="date" form="form1" name="date" value="'.$row['date']'"></td>';
+       echo '<td><input type="number" id="userid" form="form1" name="userid" min="0" value="'.$row['userid'].'" required></td>';
+       echo '<td><input type="number" id="score" form="form1" name="score" min="0" value="'.$row['score'].'" required></td>';
+       echo '<td><input type="text" id="name" form="form1" name="name" value="'.$row['name'].'" required></td>';
+       echo '<td><input type="text" id="date" form="form1" name="date" value="'.$row['date'].'"></td>';
        echo '<td><input type="submit" form="form1" name="submitModify" value="Speichern"></td>';
        echo "</tr>";
       }
