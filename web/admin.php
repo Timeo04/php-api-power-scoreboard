@@ -122,8 +122,8 @@
       echo "<p>gespeichert!</p><br>";
      }else{
       echo "<p>Fehler!</p><br>";
-     }*/
-    }
+     }
+    }*/
   
    ?>
   <h2>Score eintragen</h2>
