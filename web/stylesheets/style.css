@@ -61,6 +61,43 @@ tr:hover {
   background-color: #ddd;
 }
 
+.delete {
+  background-color: #cc5e4e;
+  color: white;
+  padding: 14px 20px;
+  margin: 4px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete:hover {
+  background-color: #c96557;
+}
+
+.modify {
+  background-color: #f2ae3f;
+  color: white;
+  padding: 14px 20px;
+  margin: 4px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modify:hover {
+ background-color: #fcbf5b; 
+}
+
+.modifyinput {
+ background-color: #fcbf5b; 
+}
+
+.modifyinput:hover {
+ background-color: #fcc76f; 
+}
+
+
 input[type=text], input[type=number] {
   /*width: 100%;*/
   padding: 12px 20px;
@@ -109,40 +146,4 @@ input[type=reset]:hover {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-}
-
-.delete {
-  background-color: #cc5e4e;
-  color: white;
-  padding: 14px 20px;
-  margin: 4px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.delete:hover {
-  background-color: #c96557;
-}
-
-.modify {
-  background-color: #f2ae3f;
-  color: white;
-  padding: 14px 20px;
-  margin: 4px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.modify:hover {
- background-color: #fcbf5b; 
-}
-
-.modifyinput {
- background-color: #fcbf5b; 
-}
-
-.modifyinput:hover {
- background-color: #fcc76f; 
 }
