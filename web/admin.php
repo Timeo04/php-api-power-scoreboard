@@ -17,10 +17,11 @@
      deleteColumn($_POST['delete']);
      //echo $_POST['delete'];
     }
-  
+  /*
     if(isset($_POST['deleteAll'])){
      resetDB();
     }
+    */
   
     if(isset($_POST['submitSave'])){
      //storeScore();
@@ -74,7 +75,7 @@
      $statement = $pdo->prepare("DELETE FROM scoreboard WHERE scoreid=".$id.";");
      $statement->execute();
     }
-  
+  /*
     function resetDB(){
      $db = parse_url(getenv("DATABASE_URL"));
      $pdo = new PDO("pgsql:" . sprintf( 
@@ -89,7 +90,7 @@
      $statement->execute();     
      echo "<p>zurückgesetzt!</p>";
     }
-  
+  */
   /*  function storeScore(){
      $db = parse_url(getenv("DATABASE_URL"));
      $ok = true;
@@ -137,7 +138,7 @@
    <input type="text" id="name" name="name" value="" required><br>
    <label for="date">Date:</label><br>
    <input type="text" id="date" name="date" value=""><br>
-   <input type="submit" name="submitSave" value="speichern">
+   <input type="submit" name="submitSave" value="Speichern">
    <input type="reset">
   </form>
   
@@ -145,6 +146,8 @@
   <hr>
   <p></p>
   <h2 style="color: red;">Alles Löschen</h2>
-  <button type="submit" form="form1" name="deleteAll" value="true">Zurücksetzen</button>
+  <!--<button type="submit" form="form1" name="deleteAll" value="true">Zurücksetzen</button>-->
+  <button onclick="window.location.href = 'admindata/reset';">Zurücksetzen</button>
+  <br>
  </body>
 </html>
