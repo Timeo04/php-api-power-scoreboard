@@ -33,7 +33,8 @@ if(strlen($name)<1){
     $ok = false;
 }
 if(!isset($datevar)){
-    $datevar = date(date_format('Y-m-d H:i:s'));
+    date_default_timezone_set('Europe/Zurich');
+    $datevar = date('Y-m-d H:i:s');
 }
 
 if($ok){
