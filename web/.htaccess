@@ -1,5 +1,13 @@
 Header set Access-Control-Allow-Origin 'https://preview.openprocessing.org'
 
+#Protect single file
+<Files admin.php>
+AuthName "Dialog prompt"
+AuthType Basic
+AuthUserFile .htpasswd
+Require valid-user
+</Files>
+
 RewriteEngine On
 ## To internally redirect /dir/foo to /dir/foo.php
 RewriteCond %{REQUEST_FILENAME} !-d
