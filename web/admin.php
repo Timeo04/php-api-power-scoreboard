@@ -12,8 +12,6 @@
   <p></p>
   <form method="post" id="form1"></form>
    <?php
-  
-
     if(isset($_POST['delete'])){
      deleteColumn($_POST['delete']);
      //echo $_POST['delete'];
@@ -30,6 +28,7 @@
     }*/
   
     if(isset($_POST['submitModify'])){
+     changeColumn($_POST['scoreid'],$_POST['userid'],$_POST['score'],$_POST['name'],$_POST'date']);
      echo "<p>Submitted</p>";
     }
     if(isset($_POST['modify'])){
@@ -95,7 +94,8 @@
        echo "</tr>";
       }else{
        echo "<tr>";
-       echo "<td>". $row['scoreid']. "</td>";
+       //echo "<td>". $row['scoreid']. "</td>";
+       echo '<td><input style="background-color: #b4c7ab;" type="number" id="scoreid" form="form1" name="scoreid" min="0" value="'.$row['scoreid'].'" required readonly></td>';
        echo '<td><input style="background-color: #b4c7ab;" type="number" id="userid" form="form1" name="userid" min="0" value="'.$row['userid'].'" required></td>';
        echo '<td><input style="background-color: #b4c7ab;" type="number" id="score" form="form1" name="score" min="0" value="'.$row['score'].'" required></td>';
        echo '<td><input style="background-color: #b4c7ab;" type="text" id="name" form="form1" name="name" value="'.$row['name'].'" required></td>';
@@ -106,6 +106,10 @@
       }
      }
      echo "</table>";  
+    }
+  
+    function changeColumn($sidv,$uidv,$sv,$nv,$dv){
+     
     }
   
     function deleteColumn($id){
