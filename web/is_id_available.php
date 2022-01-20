@@ -1,5 +1,8 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
+header('Access-Control-Allow-Origin: https://preview.openprocessing.org');
+header('Access-Control-Allow-Methods: GET');
+header("Access-Control-Allow-Headers: X-Requested-With");
 
 $ok = true;
 if(isset($_GET['id']) and is_numeric($_GET['id'])){
