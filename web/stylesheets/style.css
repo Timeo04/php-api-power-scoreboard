@@ -62,7 +62,7 @@ tr:hover {
 }
 
 .delete {
-  background-color: #cc5e4e;
+  background-color: #cc5e4e !important;
   color: white;
   padding: 14px 20px;
   margin: 4px 0;
@@ -72,11 +72,11 @@ tr:hover {
 }
 
 .delete:hover {
-  background-color: #c96557;
+  background-color: #c96557 !important;
 }
 
 .modify {
-  background-color: #f2ae3f;
+  background-color: #f2ae3f !important;
   color: white;
   padding: 14px 20px;
   margin: 4px 0;
@@ -86,15 +86,15 @@ tr:hover {
 }
 
 .modify:hover {
- background-color: #fcbf5b; 
+ background-color: #fcbf5b !important; 
 }
 
 .modifyinput {
- background-color: #fcbf5b; 
+ background-color: #fcd38d; 
 }
 
 .modifyinput:hover {
- background-color: #fcc76f; 
+ background-color: #fad79b; 
 }
 
 
