@@ -22,6 +22,10 @@
      resetDB();
     }
   
+    if(isset($_POST['submitSave'])){
+     echo "<p>Saave</p>";
+    }
+  
     showTable();
   
     echo '<br><p></p>';
@@ -41,7 +45,7 @@
      
      echo '<table border="1" width="800" style="margin-left:auto;margin-right:auto">';
      echo '<tr><th>ScoreID:</th><th>UserID:</th><th>Score:</th><th>Name:</th><th>Datum:</th><th>delete</th></tr>';
-     $sql = "SELECT * FROM scoreboard ORDER BY score DESC";
+     $sql = "SELECT * FROM scoreboard ORDER BY scoreid DESC";
      foreach ($pdo->query($sql) as $row) {
       echo "<tr>";
       echo "<td>". $row['scoreid']. "</td>";
@@ -91,7 +95,7 @@
    ?>
   <h2>Score eintragen</h2>
   <br>
-  <form method="post" action="/add.php" id="form2">
+  <form method="post" id="form2">
    <label for="userid">User ID (required):</label><br>
    <input type="number" id="userid" name="userid" min="0" value="9999" required><br>
    <label for="score">Score (required):</label><br>
