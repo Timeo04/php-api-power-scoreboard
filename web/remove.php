@@ -13,10 +13,10 @@ $pdo = new PDO("pgsql:" . sprintf(
 
 $data = json_decode(file_get_contents('php://input'), true);
 
-if(!isset($data['userid']) or !is_numeric($data['userid'])){
+if(!isset($data['scoreid']) or !is_numeric($data['scoreid'])){
   echo json_encode(["ok" => false]);
 }else{
-  $statement = $pdo->prepare("DELETE FROM scoreboard WHERE userid=".$data['userid'].";");
+  $statement = $pdo->prepare("DELETE FROM scoreboard WHERE scoreid=".$data['scoreid'].";");
   $ok = $statement->execute();
-  echo json_encode(["ok" => "DELETE FROM scoreboard WHERE userid=".$data['userid'].";"]); 
+  echo json_encode(["ok" => $ok]); 
 }
