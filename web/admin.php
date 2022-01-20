@@ -132,7 +132,7 @@
    ?>
   <h2>Score eintragen</h2>
   <br>
-  <form method="post" action="/admindata/add.php" id="form2">
+  <form method="post" action="/admindata/add" id="form2">
    <label for="userid">User ID (required):</label><br>
    <input type="number" id="userid" name="userid" min="0" value="9999" required><br>
    <label for="score">Score (required):</label><br>
