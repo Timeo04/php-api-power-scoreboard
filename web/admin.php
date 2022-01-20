@@ -24,6 +24,10 @@
   
     showTable();
   
+    echo '<br><p></p>';
+    echo '<h2 style="color: red;">Alles Löschen</h2>';
+    echo '<button type="submit" form="form1" name="deleteAll" value="true">Zurücksetzen</button>';
+  
     function showTable(){
      $db = parse_url(getenv("DATABASE_URL"));
      $pdo = new PDO("pgsql:" . sprintf(
@@ -51,10 +55,6 @@
      }
      echo "</table>";  
     }
-  
-    echo '<br><p></p>';
-    echo '<h2 style="color: red;>Alles Löschen</h2>';
-    echo '<button type="submit" form="form1" name="deleteAll" value="true">Zurücksetzen</button>';
   
     function deleteColumn($id){
      $db = parse_url(getenv("DATABASE_URL"));
