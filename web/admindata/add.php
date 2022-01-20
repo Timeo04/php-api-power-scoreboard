@@ -25,6 +25,10 @@
     $score = $_POST['score'];
     $userid = $_POST['userid'];
     $datevar = $_POST['date'];
+    echo "<p>".$name."</p><br>";
+    echo "<p>".$score."</p><br>";
+    echo "<p>".$userid."</p><br>";
+    echo "<p>".$datevar."</p><br>";
     if(strlen($name)<1){
      $ok = false;
     }elseif(!is_numeric($score)){
