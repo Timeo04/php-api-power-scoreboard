@@ -6,6 +6,7 @@ header('Access-Control-Allow-Methods: GET, POST');
 header('Access-Control-Request-Method: POST');
 //header('Access-Control-Request-Headers: Special-Request-Header'); 
 //header("Access-Control-Allow-Headers: X-Requested-With");
+header('Access-Control-Allow-Headers: x-www-form-urlencoded');
 $db = parse_url(getenv("DATABASE_URL"));
 $ok = true;
 
