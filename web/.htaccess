@@ -7,6 +7,12 @@ AuthType Basic
 AuthUserFile /app/.htpasswd
 Require valid-user
 </Files>
+<Files admindata/add.php>
+AuthName "Bitte anmelden!"
+AuthType Basic
+AuthUserFile /app/.htpasswd
+Require valid-user
+</Files>
 
 RewriteEngine On
 ## To internally redirect /dir/foo to /dir/foo.php
@@ -14,6 +20,9 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{DOCUMENT_ROOT}/$1.php -f
 RewriteRule ^(.+?)/?$ $1.php [L]
 
+# browser requests PHP
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.php
+RewriteRule ^/?(.*)\.php$ /$1 [L,R=301]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.php [QSA,L]
