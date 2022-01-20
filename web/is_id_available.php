@@ -18,7 +18,7 @@ $pdo = new PDO("pgsql:" . sprintf(
 ));
 
 if($ok){
-   $statement = $pdo->prepare("SELECT COUNT(*) FROM scoreboard WHERE userid=".$id.");
+   $statement = $pdo->prepare("SELECT COUNT(*) FROM scoreboard WHERE userid=".$id.");");
    $statement->execute();
    $data = $statement->fetchAll(PDO::FETCH_ASSOC);
    echo json_encode($data);
