@@ -2,6 +2,9 @@
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: https://preview.openprocessing.org');
 header('Access-Control-Allow-Methods: GET, POST');
+
+header('Access-Control-Request-Method: POST');
+header('Access-Control-Request-Headers: Special-Request-Header'); 
 header("Access-Control-Allow-Headers: X-Requested-With");
 $db = parse_url(getenv("DATABASE_URL"));
 $ok = true;
