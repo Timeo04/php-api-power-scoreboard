@@ -56,6 +56,10 @@
      echo "</table>";  
     }
   
+    function showModifyTable(){
+     echo 
+    }
+  
     function deleteColumn($id){
      $db = parse_url(getenv("DATABASE_URL"));
      $pdo = new PDO("pgsql:" . sprintf( 
@@ -85,5 +89,19 @@
      echo "<p>zurückgesetzt!</p>";
     }
    ?>
+  <h2>Score eintragen</h2>
+  <br>
+  <form method="post" action="/add.php" id="form2">
+   <label for="userid">User ID (required):</label><br>
+   <input type="number" id="userid" name="userid" min="0" value="9999" required><br>
+   <label for="score">Score (required):</label><br>
+   <input type="number" id="score" name="score" min="0" value="0" required><br>
+   <label for="name">Name (required):</label><br>
+   <input type="text" id="name" name="name" value="" required><br>
+   <label for="date">Date:</label><br>
+   <input type="text" id="date" name="date" value=""><br>
+   <input type="submit" name="submitSave" value="speichern">
+   <input type="reset">
+  </form>
  </body>
 </html>
