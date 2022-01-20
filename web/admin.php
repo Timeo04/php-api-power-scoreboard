@@ -29,6 +29,9 @@
      //echo "<p>Saave</p>";
     }*/
   
+    if(isset($_POST['submitModify'])){
+     echo "<p>Submitted</p>";
+    }
     if(isset($_POST['modify'])){
      showModifyTable($_POST['modify']);
     }else{
@@ -76,7 +79,7 @@
      ));
      
      echo '<table border="1" width="800" style="margin-left:auto;margin-right:auto">';
-     echo '<tr><th>ScoreID:</th><th>UserID:</th><th>Score:</th><th>Name:</th><th>Datum:</th><th></th></tr>';
+     echo '<tr><th>ScoreID:</th><th>UserID:</th><th>Score:</th><th>Name:</th><th>Datum:</th><th></th><th></th></tr>';
      $sql = "SELECT * FROM scoreboard ORDER BY scoreid DESC";
      foreach ($pdo->query($sql) as $row) {
       if($row['scoreid']!=$id){
@@ -87,16 +90,18 @@
        echo "<td>". $row['name'] . "</td>";
        echo "<td>". $row['date'] . "</td>";
        echo "<td></td>";
+       echo "<td></td>";
        //echo '<td><form method="post"><input type="submit" name="button1" class="button" value="'.$row['scoreid']. '"</td>';
        echo "</tr>";
       }else{
        echo "<tr>";
        echo "<td>". $row['scoreid']. "</td>";
-       echo '<td><input type="number" id="userid" form="form1" name="userid" min="0" value="'.$row['userid'].'" required></td>';
-       echo '<td><input type="number" id="score" form="form1" name="score" min="0" value="'.$row['score'].'" required></td>';
-       echo '<td><input type="text" id="name" form="form1" name="name" value="'.$row['name'].'" required></td>';
-       echo '<td><input type="text" id="date" form="form1" name="date" value="'.$row['date'].'"></td>';
+       echo '<td><input style="background-color: #b4c7ab;" type="number" id="userid" form="form1" name="userid" min="0" value="'.$row['userid'].'" required></td>';
+       echo '<td><input style="background-color: #b4c7ab;" type="number" id="score" form="form1" name="score" min="0" value="'.$row['score'].'" required></td>';
+       echo '<td><input style="background-color: #b4c7ab;" type="text" id="name" form="form1" name="name" value="'.$row['name'].'" required></td>';
+       echo '<td><input style="background-color: #b4c7ab;" type="text" id="date" form="form1" name="date" value="'.$row['date'].'"></td>';
        echo '<td><input type="submit" form="form1" name="submitModify" value="Speichern"></td>';
+       echo '<td><input type="submit" form="form1" name="cancelModify" value="Abbrechen"></td>';
        echo "</tr>";
       }
      }
