@@ -123,6 +123,10 @@
      if($ok){
       $statement = $pdo->prepare("INSERT INTO scoreboard (userid,score,name,date) VALUES (".$userid.",".$score.",'".$name."','".$datevar."');");
       $statement->execute();
+      echo "<p>gespeichert!</p><br>";
+     }else{
+      echo "<p>Fehler!</p><br>";
+     }
     }
   
    ?>
