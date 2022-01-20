@@ -11,35 +11,40 @@
   <br>
   <p></p>
    <?php
-        $db = parse_url(getenv("DATABASE_URL"));
-     $ok = true;
-     $pdo = new PDO("pgsql:" . sprintf(
-      "host=%s;port=%s;user=%s;password=%s;dbname=%s",
-      $db["host"],
-      $db["port"],
-      $db["user"],
-      $db["pass"],
-      ltrim($db["path"], "/")
-     ));
-     $name = $_POST['name'];
-     $score = $_POST['score'];
-     $userid = $_POST['userid'];
-     $datevar = $_POST['date'];
-     if(strlen($name)<1){
-      $ok = false;
-     }elseif(!is_numeric($score)){
-      $ok = false;
-     }elseif(!is_numeric($userid)){
-      $ok = false;
-     }
-     if(!isset($datevar)){
-       date_default_timezone_set('Europe/Zurich');
-       $datevar = date('Y-m-d H:i:s');
-     }
-     if($ok){
-      $statement = $pdo->prepare("INSERT INTO scoreboard (userid,score,name,date) VALUES (".$userid.",".$score.",'".$name."','".$datevar."');");
-      $statement->execute();
-      echo "<p>gespeichert!</p><br>";
-     }else{
-      echo "<p>Fehler!</p><br>";
+    $db = parse_url(getenv("DATABASE_URL"));
+    $ok = true;
+    $pdo = new PDO("pgsql:" . sprintf(
+     "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+     $db["host"],
+     $db["port"],
+     $db["user"],
+     $db["pass"],
+     ltrim($db["path"], "/")
+    ));
+    $name = $_POST['name'];
+    $score = $_POST['score'];
+    $userid = $_POST['userid'];
+    $datevar = $_POST['date'];
+    if(strlen($name)<1){
+     $ok = false;
+    }elseif(!is_numeric($score)){
+     $ok = false;
+    }elseif(!is_numeric($userid)){
+     $ok = false;
+    }
+    if(!isset($datevar) or $datevar==''){
+      date_default_timezone_set('Europe/Zurich');
+      $datevar = date('Y-m-d H:i:s');
+    }
+    if($ok){
+     $statement = $pdo->prepare("INSERT INTO scoreboard (userid,score,name,date) VALUES (".$userid.",".$score.",'".$name."','".$datevar."');");
+     $statement->execute();
+     echo "<p>gespeichert!</p><br>";
+    }else{
+     echo "<p>Fehler!</p><br>";
+    }
    ?>
+  <br>
+  <input type="button" value="Zurück" onClick="javascript:history.back()">
+ </body>
+</html>
