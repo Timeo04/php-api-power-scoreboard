@@ -18,7 +18,7 @@ body {
 }
 
 h1 {
-  color:#888800;   /* Farbe orange */
+  color:#ff9e00;   /* Farbe orange */
   font-size:30pt;  /* Größe 28pt   */
   font-family:Arial, Helvetica, sans-serif; /* Schriftart */
 }
@@ -54,7 +54,7 @@ tr:hover {
 }
 
 input[type=text], input[type=number] {
-  width: 100%;
+  /*width: 100%;*/
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -64,8 +64,8 @@ input[type=text], input[type=number] {
 }
 
 input[type=submit] {
-  width: 100%;
-  background-color: #e3c936;
+  /*width: 100%;*/
+  background-color: #f2ae3f;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -75,12 +75,12 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #f2dc5e;
+  background-color: #fcbf5b;
 }
 
 input[type=reset] {
-  width: 100%;
-  background-color: #ff675c;
+  /*width: 100%;*/
+  background-color: #f2ae3f;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -90,5 +90,43 @@ input[type=reset] {
 }
 
 input[type=reset]:hover {
-  background-color: #ff837a;
+  background-color: #fcbf5b;
+}
+
+#death {
+  background-color: #ff0000;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete {
+  background-color: #cc5e4e;
+  color: white;
+  padding: 14px 20px;
+  margin: 4px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete:hover {
+  background-color: #c96557;
+}
+
+.modify {
+  background-color: #f2ae3f;
+  color: white;
+  padding: 14px 20px;
+  margin: 4px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modify:hover {
+ background-color: #fcbf5b; 
 }
