@@ -100,7 +100,7 @@
        echo '<td><input class="modifyinput" type="text" id="name" form="form1" name="name" value="'.$row['name'].'" required></td>';
        echo '<td><input class="modifyinput" type="text" id="date" form="form1" name="date" value="'.$row['date'].'"></td>';
        echo '<td><input type="submit" form="form1" name="submitModify" value="Speichern"></td>';
-       echo '<td><input class="delete" type="submit" form="form1" name="cancelModify" value="Abbrechen"></td>';
+       echo '<td><input type="submit" class="delete" form="form1" name="cancelModify" value="Abbrechen"></td>';
        echo "</tr>";
       }
      }
