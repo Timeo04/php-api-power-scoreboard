@@ -30,7 +30,7 @@
      echo '<tr><th>Score:</th><th>Name:</th><th>Datum:</th></tr>';
      $sql = "SELECT score, name, date FROM scoreboard ORDER BY score DESC";
      foreach ($pdo1->query($sql) as $row) {
-      echo "
+      //echo "
       echo "<tr>";
       echo "<td>". $row['score'] . "</td>";
       echo "<td>". $row['name'] . "</td>";
