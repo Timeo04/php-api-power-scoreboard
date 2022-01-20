@@ -1,7 +1,7 @@
 <html>
  <head>
   <title>Admin - Scoreboard</title>
-  <link rel="stylesheet" href="stylesheets/style.css">
+  <link rel="stylesheet" href="../stylesheets/style.css">
  </head>
  <body>
   <p></p>
