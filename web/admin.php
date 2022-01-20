@@ -57,7 +57,7 @@
     }
   
     function showModifyTable(){
-     echo 
+     echo "<p>Hello World</p>";
     }
   
     function deleteColumn($id){
