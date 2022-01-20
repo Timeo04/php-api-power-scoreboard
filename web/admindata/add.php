@@ -49,7 +49,7 @@
     }
    ?>
   <br>
-  <button onclick="window.location.href = '../admin';">Zurück</button>
+  <button class="modify" onclick="window.location.href = '../admin';">Zurück</button>
   <!--<input type="button" value="Zurück" onClick="javascript:history.back()">-->
  </body>
 </html>
