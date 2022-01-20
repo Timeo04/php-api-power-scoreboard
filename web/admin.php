@@ -28,8 +28,7 @@
     }*/
   
     if(isset($_POST['submitModify'])){
-     changeColumn($_POST['scoreid'],$_POST['userid'],$_POST['score'],$_POST['name'],$_POST'date']);
-     echo "<p>Submitted</p>";
+     changeColumn($_POST['scoreid'],$_POST['userid'],$_POST['score'],$_POST['name'],$_POST['date']);
     }
     if(isset($_POST['modify'])){
      showModifyTable($_POST['modify']);
@@ -109,7 +108,16 @@
     }
   
     function changeColumn($sidv,$uidv,$sv,$nv,$dv){
-     
+     $db = parse_url(getenv("DATABASE_URL"));
+     $pdo = new PDO("pgsql:" . sprintf(
+        "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+        $db["host"],
+        $db["port"],
+        $db["user"],
+        $db["pass"],
+        ltrim($db["path"], "/")
+     ));
+     echo "<p>Submitted</p>";
     }
   
     function deleteColumn($id){
