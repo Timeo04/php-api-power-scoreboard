@@ -18,9 +18,9 @@ body {
 }
 
 h1 {
-  color:#555500;   /* Farbe orange */
+  color:#888800;   /* Farbe orange */
   font-size:30pt;  /* Größe 28pt   */
-  font-family:arial, sans-serif; /* Schriftart */
+  font-family:Arial, Helvetica, sans-serif; /* Schriftart */
 }
 
 table, th, tr, td{
@@ -40,8 +40,8 @@ td, th{
 th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
-  background-color: #04AA6D;
+  text-align: center;
+  background-color: #f2ae3f;
   color: white; 
 }
 
@@ -51,4 +51,44 @@ tr:nth-child(even){
 
 tr:hover {
   background-color: #ddd;
+}
+
+input[type=text], input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #e3c936;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #f2dc5e;
+}
+
+input[type=reset] {
+  width: 100%;
+  background-color: #ff675c;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=reset]:hover {
+  background-color: #ff837a;
 }
