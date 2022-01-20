@@ -23,7 +23,7 @@
     }
   
     if(isset($_POST['submitSave'])){
-     storeScore();
+     //storeScore();
      //echo "<p>Saave</p>";
     }
   
