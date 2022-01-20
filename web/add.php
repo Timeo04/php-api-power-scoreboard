@@ -2,7 +2,7 @@
 header('Content-Type: application/json; charset=utf-8');
 //header('Access-Control-Allow-Origin: https://preview.openprocessing.org');
 
-//header('Access-Control-Allow-Methods: GET, POST');
+header('Access-Control-Allow-Methods: GET, POST');
 
 //header('Access-Control-Request-Method: POST');
 //header('Access-Control-Request-Headers: Special-Request-Header'); 
