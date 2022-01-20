@@ -22,11 +22,11 @@
      resetDB();
     }
     */
-  
+  /*
     if(isset($_POST['submitSave'])){
      //storeScore();
      //echo "<p>Saave</p>";
-    }
+    }*/
   
     showTable();
   
@@ -145,7 +145,7 @@
   <br>
   <hr>
   <p></p>
-  <h2 style="color: red;">Alles Löschen</h2>
+  <h2 style="color: red;">Alles löschen</h2>
   <!--<button type="submit" form="form1" name="deleteAll" value="true">Zurücksetzen</button>-->
   <button onclick="window.location.href = 'admindata/reset';">Zurücksetzen</button>
   <br>
