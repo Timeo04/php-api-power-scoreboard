@@ -57,8 +57,8 @@
       echo "<td>". $row['score'] . "</td>";
       echo "<td>". $row['name'] . "</td>";
       echo "<td>". $row['date'] . "</td>";
-      echo '<td><button type="submit" form="form1" name="modify" value="'.$row['scoreid']. '">Bearbeiten</button></td>';
-      echo '<td><button type="submit" form="form1" name="delete" value="'.$row['scoreid']. '">Löschen</button></td>';
+      echo '<td><button class="modify" type="submit" form="form1" name="modify" value="'.$row['scoreid']. '">Bearbeiten</button></td>';
+      echo '<td><button class="delete" type="submit" form="form1" name="delete" value="'.$row['scoreid']. '">Löschen</button></td>';
       //echo '<td><form method="post"><input type="submit" name="button1" class="button" value="'.$row['scoreid']. '"</td>';
       echo "</tr>";
      }
@@ -94,11 +94,11 @@
       }else{
        echo "<tr>";
        //echo "<td>". $row['scoreid']. "</td>";
-       echo '<td><input style="background-color: #b4c7ab;" type="number" id="scoreid" form="form1" name="scoreid" min="0" value="'.$row['scoreid'].'" required readonly></td>';
-       echo '<td><input style="background-color: #b4c7ab;" type="number" id="userid" form="form1" name="userid" min="0" value="'.$row['userid'].'" required></td>';
-       echo '<td><input style="background-color: #b4c7ab;" type="number" id="score" form="form1" name="score" min="0" value="'.$row['score'].'" required></td>';
-       echo '<td><input style="background-color: #b4c7ab;" type="text" id="name" form="form1" name="name" value="'.$row['name'].'" required></td>';
-       echo '<td><input style="background-color: #b4c7ab;" type="text" id="date" form="form1" name="date" value="'.$row['date'].'"></td>';
+       echo '<td><input style="background-color: #e6c185;" type="number" id="scoreid" form="form1" name="scoreid" min="0" value="'.$row['scoreid'].'" required readonly></td>';
+       echo '<td><input style="background-color: #e6c185;" type="number" id="userid" form="form1" name="userid" min="0" value="'.$row['userid'].'" required></td>';
+       echo '<td><input style="background-color: #e6c185;" type="number" id="score" form="form1" name="score" min="0" value="'.$row['score'].'" required></td>';
+       echo '<td><input style="background-color: #e6c185;" type="text" id="name" form="form1" name="name" value="'.$row['name'].'" required></td>';
+       echo '<td><input style="background-color: #e6c185;" type="text" id="date" form="form1" name="date" value="'.$row['date'].'"></td>';
        echo '<td><input type="submit" form="form1" name="submitModify" value="Speichern"></td>';
        echo '<td><input type="submit" form="form1" name="cancelModify" value="Abbrechen"></td>';
        echo "</tr>";
@@ -202,7 +202,7 @@
    <label for="date">Date:</label><br>
    <input type="text" id="date" name="date" value=""><br>
    <input type="submit" name="submitSave" value="Speichern">
-   <input type="reset">
+   <input type="reset" value="Abbrechen">
   </form>
   
   <br>
@@ -210,7 +210,7 @@
   <p></p>
   <h2 style="color: red;">Alles löschen</h2>
   <!--<button type="submit" form="form1" name="deleteAll" value="true">Zurücksetzen</button>-->
-  <button onclick="window.location.href = 'admindata/reset';">Zurücksetzen</button>
+  <button id="death" onclick="window.location.href = 'admindata/reset';">Zurücksetzen</button>
   <br>
   <hr>
   <br>
