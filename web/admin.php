@@ -12,7 +12,16 @@
   <form method="post" id="form1"></form>
    <?php
   
-    $db = parse_url(getenv("DATABASE_URL"));
+  if(isset($_POST['delete'])){
+    echo $_POST['delete'];
+  }
+  
+    echo "<p>Helloo World</p>";
+  
+    showTable();
+  
+    function showTable(){
+         $db = parse_url(getenv("DATABASE_URL"));
     $pdo = new PDO("pgsql:" . sprintf(
         "host=%s;port=%s;user=%s;password=%s;dbname=%s",
         $db["host"],
@@ -21,17 +30,7 @@
         $db["pass"],
         ltrim($db["path"], "/")
     ));
-  
-  echo $_POST;
-  if(isset($_POST['delete'])){
-    echo $_POST['delete'];
-  }
-  
-    echo "<p>Helloo World</p>";
-  
-    //showTable($pdo);
-  
-    //function showTable($pdo1){
+     echo "<p>Hello2</p>";
      echo '<table border="1" width="800" style="margin-left:auto;margin-right:auto">';
      echo '<tr><th>ScoreID:</th><th>UserID:</th><th>Score:</th><th>Name:</th><th>Datum:</th><th>delete</th></tr>';
      $sql = "SELECT * FROM scoreboard ORDER BY score DESC";
@@ -48,7 +47,7 @@
       echo "</tr>";
      }
      echo "</table>";  
-    //}
+    }
   
     function resetDB(){
      
