@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="stylesheets/style.css">
  </head>
  <body>
+  <p></p>
    <h1>Admin</h1>
    <h2>Scoreboard</h2>
    <a href="https://openprocessing.org/sketch/1447262">zum Game</a>
@@ -12,31 +13,32 @@
   <form method="post" id="form1"></form>
    <?php
   
-  if(isset($_POST['delete'])){
-   deleteColumn($_POST['delete']);
-   //echo $_POST['delete'];
-  }
+    if(isset($_POST['delete'])){
+     deleteColumn($_POST['delete']);
+     //echo $_POST['delete'];
+    }
   
-    echo "<p>Helloo World</p>";
+    if(isset($_POST['deleteAll'])){
+     resetDB();
+    }
   
     showTable();
   
     function showTable(){
-         $db = parse_url(getenv("DATABASE_URL"));
-    $pdo = new PDO("pgsql:" . sprintf(
+     $db = parse_url(getenv("DATABASE_URL"));
+     $pdo = new PDO("pgsql:" . sprintf(
         "host=%s;port=%s;user=%s;password=%s;dbname=%s",
         $db["host"],
         $db["port"],
         $db["user"],
         $db["pass"],
         ltrim($db["path"], "/")
-    ));
-     echo "<p>Hello2</p>";
+     ));
+     
      echo '<table border="1" width="800" style="margin-left:auto;margin-right:auto">';
      echo '<tr><th>ScoreID:</th><th>UserID:</th><th>Score:</th><th>Name:</th><th>Datum:</th><th>delete</th></tr>';
      $sql = "SELECT * FROM scoreboard ORDER BY score DESC";
      foreach ($pdo->query($sql) as $row) {
-      //echo "
       echo "<tr>";
       echo "<td>". $row['scoreid']. "</td>";
       echo "<td>". $row['userid']. "</td>";
@@ -49,6 +51,10 @@
      }
      echo "</table>";  
     }
+  
+    echo '<br><p></p>';
+    echo '<h2 style="color: red;>Alles Löschen</h2>'
+    echo '<button type="submit" form="form1" name="deleteAll" value="true">Zurücksetzen</button>';
   
     function deleteColumn($id){
      $db = parse_url(getenv("DATABASE_URL"));
@@ -65,8 +71,18 @@
     }
   
     function resetDB(){
-     
-     echo "<p>reseeet</p>";
+     $db = parse_url(getenv("DATABASE_URL"));
+     $pdo = new PDO("pgsql:" . sprintf( 
+      "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+      $db["host"],
+      $db["port"],
+      $db["user"],
+      $db["pass"],
+      ltrim($db["path"], "/")
+     ));
+     $statement = $pdo->prepare("DELETE FROM scoreboard;");
+     $statement->execute();     
+     echo "<p>zurückgesetzt!</p>";
     }
    ?>
  </body>
