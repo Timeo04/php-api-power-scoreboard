@@ -4,7 +4,7 @@ Header set Access-Control-Allow-Origin 'https://preview.openprocessing.org'
 <Files admin.php>
 AuthName "Dialog prompt"
 AuthType Basic
-AuthUserFile .htpasswd
+AuthUserFile /.htpasswd
 Require valid-user
 </Files>
 
