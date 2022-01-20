@@ -212,5 +212,12 @@
   <!--<button type="submit" form="form1" name="deleteAll" value="true">Zurücksetzen</button>-->
   <button onclick="window.location.href = 'admindata/reset';">Zurücksetzen</button>
   <br>
+  <hr>
+  <br>
+  <audio controls>
+   <source src="admindata/TheFatRat - Infinite Power.mp3" type="audio/mpeg">
+  </audio>
+  <br>
+  <p>2022</p>
  </body>
 </html>
