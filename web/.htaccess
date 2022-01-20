@@ -2,9 +2,9 @@ Header set Access-Control-Allow-Origin 'https://preview.openprocessing.org'
 
 #Protect single file
 <Files admin.php>
-AuthName "Dialog prompt"
+AuthName "Bitte anmelden!"
 AuthType Basic
-AuthUserFile /.htpasswd
+AuthUserFile /app/.htpasswd
 Require valid-user
 </Files>
 
