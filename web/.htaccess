@@ -1,5 +1,4 @@
 Header set Access-Control-Allow-Origin 'https://preview.openprocessing.org'
-Header set Access-Control-Allow-Methods: GET, POST
 
 RewriteEngine On
 ## To internally redirect /dir/foo to /dir/foo.php
