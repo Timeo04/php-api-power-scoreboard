@@ -76,7 +76,7 @@
         ltrim($db["path"], "/")
      ));
      
-     echo '<table border="1" width="800" style="margin-left:auto;margin-right:auto">';
+     echo '<table border="1" width="800">';
      echo '<tr><th>ScoreID:</th><th>UserID:</th><th>Score:</th><th>Name:</th><th>Datum:</th><th></th><th></th></tr>';
      $sql = "SELECT * FROM scoreboard ORDER BY scoreid DESC";
      foreach ($pdo->query($sql) as $row) {
@@ -94,13 +94,13 @@
       }else{
        echo "<tr>";
        //echo "<td>". $row['scoreid']. "</td>";
-       echo '<td><input style="background-color: #e6c185;" type="number" id="scoreid" form="form1" name="scoreid" min="0" value="'.$row['scoreid'].'" required readonly></td>';
-       echo '<td><input style="background-color: #e6c185;" type="number" id="userid" form="form1" name="userid" min="0" value="'.$row['userid'].'" required></td>';
-       echo '<td><input style="background-color: #e6c185;" type="number" id="score" form="form1" name="score" min="0" value="'.$row['score'].'" required></td>';
-       echo '<td><input style="background-color: #e6c185;" type="text" id="name" form="form1" name="name" value="'.$row['name'].'" required></td>';
-       echo '<td><input style="background-color: #e6c185;" type="text" id="date" form="form1" name="date" value="'.$row['date'].'"></td>';
+       echo '<td><input class="modifyinput" type="number" id="scoreid" form="form1" name="scoreid" min="0" value="'.$row['scoreid'].'" required readonly></td>';
+       echo '<td><input class="modifyinput" type="number" id="userid" form="form1" name="userid" min="0" value="'.$row['userid'].'" required></td>';
+       echo '<td><input class="modifyinput" type="number" id="score" form="form1" name="score" min="0" value="'.$row['score'].'" required></td>';
+       echo '<td><input class="modifyinput" type="text" id="name" form="form1" name="name" value="'.$row['name'].'" required></td>';
+       echo '<td><input class="modifyinput" type="text" id="date" form="form1" name="date" value="'.$row['date'].'"></td>';
        echo '<td><input type="submit" form="form1" name="submitModify" value="Speichern"></td>';
-       echo '<td><input type="submit" form="form1" name="cancelModify" value="Abbrechen"></td>';
+       echo '<td><input class="delete" type="submit" form="form1" name="cancelModify" value="Abbrechen"></td>';
        echo "</tr>";
       }
      }
@@ -202,7 +202,7 @@
    <label for="date">Date:</label><br>
    <input type="text" id="date" name="date" value=""><br>
    <input type="submit" name="submitSave" value="Speichern">
-   <input type="reset" value="Abbrechen">
+   <input type="reset" class="delete" value="Abbrechen">
   </form>
   
   <br>
