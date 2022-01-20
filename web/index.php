@@ -9,18 +9,6 @@
   <br>
   <p></p>
  <?php 
-  //echo '<p>Hallo Welt</p>';
-  //$url_components = parse_url($url);
-  //parse_str($url_components['query'], $params);
-  
-  //echo '<br><p> Num: '.$params['num'].' </p><br>';
-  
-  if (isset($_GET['num'])) {
-    echo '<br><p> '.$_GET['num'].' <p><br>';
-  } else {
-   echo '<br><p>No Num...</p><br>'; 
-   // Fallback behaviour goes here
-  }
   
   $db = parse_url(getenv("DATABASE_URL"));
   $pdo = new PDO("pgsql:" . sprintf(
@@ -42,8 +30,6 @@
    echo "<td>". $row['name'] . "</td>";
    echo "<td>". $row['date'] . "</td>";
    echo "</tr>";
-   //echo $row['score']." ".$row['name']." ".$row['date']."  "."<br />";
-   //echo "E-Mail: ".$row['email']."<br /><br />";
   }
   echo "</table>";
  ?>
