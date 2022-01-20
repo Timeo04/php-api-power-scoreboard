@@ -26,6 +26,7 @@
     //showTable($pdo);
   
     //function showTable($pdo1){
+     echo '<form method="post" id="form1">x/form>';
      echo '<table border="1" width="800" style="margin-left:auto;margin-right:auto">';
      echo '<tr><th>ScoreID:</th><th>UserID:</th><th>Score:</th><th>Name:</th><th>Datum:</th><th>delete</th></tr>';
      $sql = "SELECT * FROM scoreboard ORDER BY score DESC";
@@ -37,7 +38,8 @@
       echo "<td>". $row['score'] . "</td>";
       echo "<td>". $row['name'] . "</td>";
       echo "<td>". $row['date'] . "</td>";
-      echo '<td><form method="post"><input type="submit" name="button1" class="button" value="'.$row['scoreid']. '"</td>';
+      echo '<td><button type="submit" form="form1" value="'.$row['scoreid']. '">Löschen</button></td>';
+      //echo '<td><form method="post"><input type="submit" name="button1" class="button" value="'.$row['scoreid']. '"</td>';
       echo "</tr>";
      }
      echo "</table>";  
