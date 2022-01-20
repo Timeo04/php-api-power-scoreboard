@@ -17,9 +17,9 @@
     }else{
      echo "<h2 style=\"color: red;\">Alles löschen?</h2>";
      echo "<p>Sind Sie sicher? <br>Diese Aktion <b>kann nicht rückgängig gemacht werden</b></p>";
-     echo "<button type=\"submit\" form=\"form1\" name=\"deleteAll\" value=\"true\">Zurücksetzen</button>";
+     echo "<button id=\"death\" type=\"submit\" form=\"form1\" name=\"deleteAll\" value=\"true\">Zurücksetzen</button>";
      echo "<br>";
-     echo "<button onclick=\"window.location.href = '../admin';\">Abbrechen</button>";
+     echo "<button class=\"modify\" onclick=\"window.location.href = '../admin';\">Abbrechen</button>";
     }
    
     function resetDB(){
