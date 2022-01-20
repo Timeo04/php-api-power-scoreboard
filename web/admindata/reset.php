@@ -10,6 +10,7 @@
    <a href="https://openprocessing.org/sketch/1447262">zum Game</a>
   <br>
   <p></p>
+  <form method="post" id="form1"></form>
    <?php
     if(isset($_POST['deleteAll'])){
      resetDB();
