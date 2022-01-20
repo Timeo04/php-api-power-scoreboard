@@ -23,13 +23,14 @@
   
     echo "<p>Helloo World</p>";
   
-    showTable();
+    showTable($pdo);
   
-    function showTable(){
+    function showTable($pdo1){
      echo '<table border="1" width="800" style="margin-left:auto;margin-right:auto">';
      echo '<tr><th>Score:</th><th>Name:</th><th>Datum:</th></tr>';
      $sql = "SELECT score, name, date FROM scoreboard ORDER BY score DESC";
-     foreach ($pdo->query($sql) as $row) {
+     foreach ($pdo1->query($sql) as $row) {
+      echo "
       echo "<tr>";
       echo "<td>". $row['score'] . "</td>";
       echo "<td>". $row['name'] . "</td>";
