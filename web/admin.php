@@ -23,9 +23,9 @@
   
     echo "<p>Helloo World</p>";
   
-    showTable($pdo);
+    //showTable($pdo);
   
-    function showTable($pdo1){
+    //function showTable($pdo1){
      echo '<table border="1" width="800" style="margin-left:auto;margin-right:auto">';
      echo '<tr><th>Score:</th><th>Name:</th><th>Datum:</th></tr>';
      $sql = "SELECT score, name, date FROM scoreboard ORDER BY score DESC";
@@ -38,7 +38,7 @@
       echo "</tr>";
      }
      echo "</table>";  
-    }
+    //}
   
     function resetDB(){
      
