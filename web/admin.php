@@ -117,7 +117,9 @@
         $db["pass"],
         ltrim($db["path"], "/")
      ));
-     echo "<p>Submitted</p>";
+     $statement = $pdo->prepare("UPDATE scoreboard SET userid='".$uidv."', score='".$sv."', name='".$nv."', date='".$dv."' WHERE scoreid='".$sidv."';");
+     $statement->execute();
+     //echo "<p>Submitted</p>";
     }
   
     function deleteColumn($id){
