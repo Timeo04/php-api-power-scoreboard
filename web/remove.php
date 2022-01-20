@@ -18,5 +18,5 @@ if(!isset($data['userid']) or !is_numeric($data['userid'])){
 }else{
   $statement = $pdo->prepare("DELETE FROM scoreboard WHERE userid=".$data['userid'].";");
   $ok = $statement->execute();
-  echo json_encode(["ok" => $ok]); 
+  echo json_encode(["ok" => "DELETE FROM scoreboard WHERE userid=".$data['userid'].";"]); 
 }
