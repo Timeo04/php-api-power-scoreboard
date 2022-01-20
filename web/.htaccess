@@ -1,3 +1,5 @@
+Header set Access-Control-Allow-Origin 'https://preview.openprocessing.org'
+
 RewriteEngine On
 ## To internally redirect /dir/foo to /dir/foo.php
 RewriteCond %{REQUEST_FILENAME} !-d
