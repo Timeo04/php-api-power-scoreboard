@@ -13,7 +13,8 @@
    <?php
   
   if(isset($_POST['delete'])){
-    echo $_POST['delete'];
+   deleteColumn($_POST['delete']);
+   //echo $_POST['delete'];
   }
   
     echo "<p>Helloo World</p>";
@@ -47,6 +48,20 @@
       echo "</tr>";
      }
      echo "</table>";  
+    }
+  
+    function deleteColumn($id){
+     $db = parse_url(getenv("DATABASE_URL"));
+     $pdo = new PDO("pgsql:" . sprintf( 
+      "host=%s;port=%s;user=%s;password=%s;dbname=%s",
+      $db["host"],
+      $db["port"],
+      $db["user"],
+      $db["pass"],
+      ltrim($db["path"], "/")
+     ));
+     $statement = $pdo->prepare("DELETE FROM scoreboard WHERE scoreid=".$id.";");
+     $statement->execute();
     }
   
     function resetDB(){
