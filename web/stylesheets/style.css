@@ -138,3 +138,11 @@ input[type=reset]:hover {
 .modify:hover {
  background-color: #fcbf5b; 
 }
+
+.modifyinput {
+ background-color: #e6c185; 
+}
+
+.modifyinput:hover {
+ background-color: #e6c185; 
+}
