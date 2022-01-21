@@ -189,23 +189,25 @@
    ?>
   <br>
   <hr>
-  <br>
-  <h2>Score eintragen</h2>
-  <br>
-  <form action="/admindata/add" method="post" id="form2">
-   <label for="userid">User ID (required):</label><br>
-   <input type="number" id="userid" name="userid" min="0" value="9999" required><br>
-   <label for="score">Score (required):</label><br>
-   <input type="number" id="score" name="score" min="0" value="0" required><br>
-   <label for="name">Name (required):</label><br>
-   <input type="text" id="name" name="name" value="" required><br>
-   <label for="date">Date:</label><br>
-   <input type="text" id="date" name="date" value=""><br>
-   <input type="submit" name="submitSave" value="Speichern">
-   <input type="reset" class="delete" value="Abbrechen">
-  </form>
-  
-  <br>
+  <div class="abteil">
+   <br>
+   <h2>Score eintragen</h2>
+   <br>
+   <form action="/admindata/add" method="post" id="form2">
+    <label for="userid">User ID (required):</label><br>
+    <input type="number" id="userid" name="userid" min="0" value="9999" required><br>
+    <label for="score">Score (required):</label><br>
+    <input type="number" id="score" name="score" min="0" value="0" required><br>
+    <label for="name">Name (required):</label><br>
+    <input type="text" id="name" name="name" value="" required><br>
+    <label for="date">Date:</label><br>
+    <input type="text" id="date" name="date" value=""><br>
+    <input type="submit" name="submitSave" value="Speichern">
+    <input type="reset" class="delete" value="Abbrechen">
+   </form>
+
+   <br>
+  </div>
   <hr>
   <p></p>
   <h2 style="color: red;">Alles löschen</h2>
@@ -213,11 +215,13 @@
   <button id="death" onclick="window.location.href = 'admindata/reset';">Zurücksetzen</button>
   <br>
   <hr>
-  <br>
-  <audio controls>
-   <source src="admindata/TheFatRat - Infinite Power.mp3" type="audio/mpeg">
-  </audio>
-  <br>
-  <p>2022</p>
+  <div class="footer">
+   <br>
+   <audio controls>
+    <source src="admindata/TheFatRat - Infinite Power.mp3" type="audio/mpeg">
+   </audio>
+   <br>
+   <p>2022</p>
+  </div>
  </body>
 </html>
