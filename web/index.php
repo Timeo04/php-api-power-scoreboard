@@ -33,5 +33,12 @@
   }
   echo "</table>";
  ?>
+  <br>
+  <hr>
+  <div class="footer">
+   <br>
+   <p>2022</p>
+   <br>
+  </div>
  </body>
 </html>
