@@ -188,7 +188,6 @@
   
    ?>
   <br>
-  <hr>
   <div class="abteil">
    <br>
    <h2>Score eintragen</h2>
@@ -208,13 +207,11 @@
 
    <br>
   </div>
-  <hr>
   <p></p>
   <h2 style="color: red;">Alles löschen</h2>
   <!--<button type="submit" form="form1" name="deleteAll" value="true">Zurücksetzen</button>-->
   <button id="death" onclick="window.location.href = 'admindata/reset';">Zurücksetzen</button>
   <br>
-  <hr>
   <div class="footer">
    <br>
    <audio controls>
