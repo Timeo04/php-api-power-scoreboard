@@ -32,6 +32,16 @@ a:hover {
   color: #fcbf5b;
 }
 
+.footer div {
+  background-color: #424242;
+  color: white;
+}
+
+.abteil div {
+  background-color: #424242;
+  color: white;
+}
+
 table, th, tr, td{
   border-collapse: collapse;
 }
