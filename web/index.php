@@ -34,7 +34,7 @@
   echo "</table>";
  ?>
   <br>
-  <hr>
+  <!--<hr>-->
   <div class="footer">
    <br>
    <p>2022</p>
