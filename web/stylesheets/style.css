@@ -33,11 +33,13 @@ a:hover {
 }
 
 .footer div {
+  width: 100%;
   background-color: #424242;
   color: white;
 }
 
 .abteil div {
+  width: 100%;
   background-color: #424242;
   color: white;
 }
