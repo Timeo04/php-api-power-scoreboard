@@ -14,7 +14,8 @@ $pdo = new PDO("pgsql:" . sprintf(
     ltrim($db["path"], "/")
 ));
 
-$id = random_int(100000,999999);
+$id = 123456;
+//$id = random_int(100000,999999);
 check($pdo,$id);
 
 function check($pdo1,$idToCheck){
