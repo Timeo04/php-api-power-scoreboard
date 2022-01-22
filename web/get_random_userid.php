@@ -3,7 +3,7 @@ header('Content-Type: application/json; charset=utf-8');
 header("Access-Control-Allow-Headers: X-Requested-With");
 
 $db = parse_url(getenv("DATABASE_URL"));
-$pdo = new PDO("pgsql:" . sprintf(
+global $pdo = new PDO("pgsql:" . sprintf(
     "host=%s;port=%s;user=%s;password=%s;dbname=%s",
     $db["host"],
     $db["port"],
@@ -12,7 +12,7 @@ $pdo = new PDO("pgsql:" . sprintf(
     ltrim($db["path"], "/")
 ));
 
-$id = random_int(100000,999999);
+global $id = random_int(100000,999999);
 check($id);
 
 function check($idToCheck){
