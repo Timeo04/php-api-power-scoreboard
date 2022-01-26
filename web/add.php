@@ -48,6 +48,9 @@ if(!isset($datevar)){
     date_default_timezone_set('Europe/Zurich');
     $datevar = date('Y-m-d H:i:s');
 }
+if(strlen($name)>24){
+    $name = substr($name,0,23)."...";
+}
 
 if($ok){
     if(isset($datevar)){
