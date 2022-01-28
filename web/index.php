@@ -35,8 +35,8 @@
   */
   echo '<table border="1" width="500" style="margin-left:auto;margin-right:auto">';
   echo '<tr><th>Score:</th><th>Name:</th><th>Datum:</th></tr>';
-  //$sql = "SELECT MAX(score), name FROM scoreboard GROUP BY userid, name ORDER BY score DESC";
-  $sql = "SELECT DISTINCT ON(userid) score, name, date FROM scoreboard ORDER BY score DESC";
+  $sql = "SELECT MAX(score) score, name, MAX(score) date FROM scoreboard GROUP BY userid, name ORDER BY score DESC";
+  //$sql = "SELECT DISTINCT ON(userid) score, name, date FROM scoreboard ORDER BY score DESC";
   foreach ($pdo->query($sql) as $row) {
    echo "<tr>";
    echo "<td>". $row['score'] . "</td>";
