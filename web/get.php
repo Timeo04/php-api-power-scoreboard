@@ -25,7 +25,8 @@ if(isset($num) and is_numeric($num)  and $num > 0){
     $statement = $pdo->prepare("SELECT MAX(score) score, name, userid FROM scoreboard GROUP BY userid, name ORDER BY score DESC LIMIT ".$num.";");
     //$statement = $pdo->prepare("SELECT * FROM scoreboard ORDER BY score DESC LIMIT ".$num.";");
 }else{
-    $statement = $pdo->prepare("SELECT * FROM scoreboard ORDER BY score DESC;");
+    $statement = $pdo->prepare("SELECT MAX(score) score, name, userid FROM scoreboard GROUP BY userid, name ORDER BY score DESC;");
+    //$statement = $pdo->prepare("SELECT * FROM scoreboard ORDER BY score DESC;");
 }
 $statement->execute();
 $data = $statement->fetchAll(PDO::FETCH_ASSOC);
