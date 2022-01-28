@@ -21,7 +21,9 @@ $pdo = new PDO("pgsql:" . sprintf(
 //$pdo = new PDO('mysql:host=localhost;dbname=test', 'root', '');
 if(isset($num) and is_numeric($num)  and $num > 0){
     //$statement = $pdo->prepare("SELECT * FROM scoreboard ORDER BY score;");
-    $statement = $pdo->prepare("SELECT * FROM scoreboard ORDER BY score DESC LIMIT ".$num.";");
+     $sql = "SELECT MAX(score) score, name FROM scoreboard GROUP BY userid, name ORDER BY score DESC";
+    $statement = $pdo->prepare("SELECT MAX(score) score, name, userid FROM scoreboard GROUP BY userid, name ORDER BY score DESC LIMIT ".$num.";");
+    //$statement = $pdo->prepare("SELECT * FROM scoreboard ORDER BY score DESC LIMIT ".$num.";");
 }else{
     $statement = $pdo->prepare("SELECT * FROM scoreboard ORDER BY score DESC;");
 }
